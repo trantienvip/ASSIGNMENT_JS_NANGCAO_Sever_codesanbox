@@ -1,0 +1,129 @@
+.carousel.slide img {
+    width: 100%;
+}
+.content_products {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: .5rem;
+}
+.price{
+    font-size: 1.875rem;
+    font-weight: 500;
+    color: #ee4d2d;
+}
+.price-old{
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #929292;
+    margin-right: 10px;
+}
+.btn_muangay{
+    margin-right: 15px;
+    min-width: 11.25rem;
+    padding: 11px .75rem;
+    font-size: 14px;
+    color: #fff;
+    background: #ee4d2d;
+    max-width: 250px;
+    text-transform: uppercase;
+}
+.detail_product{
+    text-align: justify;
+}
+.btn_muangay:hover{
+    opacity: .9;
+}
+#sl_{
+    width: 80px;
+    height: 32px;
+    border-left: 0;
+    border-right: 0;
+    font-size: 16px;
+    font-weight: 400;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: text;
+    border-radius: 0;
+    -webkit-appearance: none;
+    justify-content: center;
+    transition: background-color .1s cubic-bezier(.4,0,.6,1);
+    border: 1px solid rgba(0,0,0,.09);
+    border-radius: 2px;
+    background: transparent;
+    color: rgba(0,0,0,.8);
+    outline: none;
+    padding-left: 5px;
+}
+span#giamgia_pt {
+    background: #ee4d2d;
+    color: #fff;
+    padding: 7px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+/* hien thi sp */
+::-webkit-scrollbar {
+    width: 2px;
+    }
+    ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #888;
+    }
+    .hienthi {
+        max-height: 250px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 2;
+    }
+    .hienthi_item {
+        display: flex;
+        max-width: 284px;
+        margin-top: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #ececec;
+    }
+    .hienthi_item p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 13.5px;
+        margin: 0;
+        color: #333;
+    }
+    .hienthi_content span {
+        line-height: 24px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ff3c20;
+    }
+    .hienthi_content {
+        margin-left: 9px;
+    }
+    .countCartBig {
+        padding: 8px;
+        position: relative;
+    }
+    .ti-shopping-cart{
+        font-size: 23px;
+        color: #f4faff;
+    }
+    .countCart.active{
+        position: absolute;
+        background: #f26f21;
+        padding: 5px;
+        color: #fff;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -8px;
+        right: -10px;
+    }

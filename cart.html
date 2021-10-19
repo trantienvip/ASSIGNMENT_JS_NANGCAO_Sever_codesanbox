@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="public/css/app.css">
+    <link rel="stylesheet" href="public/bootrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/fonts/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" href="public/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="public/owlcarousel/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="public/owlcarousel/owl.carousel.min.js"></script>
+    <link rel="shortcut icon" href="public/img/favico.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/product-detail.css">
+    <style>
+        .cart_all{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-row-gap: 1rem;
+        }
+        .hienthi_item{
+            align-items: center;
+        }
+        .hienthi_item a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark blackss">
+                <div class="container menu-mobile">
+                    <a class="navbar-brand" href="/"><img width="130px"
+                            src="http://static.ybox.vn/2020/2/0/1582473564897-Poly.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto col-md-6">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Tin tức 24h <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tin tức coin
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">ETH</a>
+                                    <a class="dropdown-item" href="#">BTC</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">SOL</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nổi bật</a>
+                            </li>
+                        </ul>
+                        <i class="iconsearch ti-search"></i>
+                        <form action="search.html" class="form-search" method="get">
+                            <input name="q" id="q" type="text" placeholder="Nhập từ khóa tìm kiếm">
+                            <p style="max-width: 285px;" id="hienthi-no"></p>
+                            <div class="hienthi"></div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                      <li class="breadcrumb-item">Giỏ hàng</li>
+                    </ol>
+                  </nav>
+                
+                <div class="row cart_all">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">Đơn giá</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Số tiền</th>
+                          </tr>
+                        </thead>
+                        <tbody id="cart-show"></tbody>
+                        <tfoot>
+                            <th scope="col" colspan="4" id="cart-tongtien"></th>
+                        </tfoot>
+                      </table>
+                      <a href="./thanhtoan.html" class="btn btn-success">Tiến hành thanh toán</a>
+                </div>
+
+            </main>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row footertop">
+                    <div class="logo col-lg-3 col-md-12">
+                        <img width="200px" src="http://static.ybox.vn/2020/2/0/1582473564897-Poly.png" alt="">
+                    </div>
+                    <div class="info col-lg-5 col-md-12">
+                        <p>
+                            <hr style="background: red"> Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu
+                            Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam.
+                        </p>
+                    </div>
+                    <div class="social col-lg-4 col-md-12">
+                        <h4 class="linkf">Liên kết với chúng tôi</h4>
+                        <ul class="list-social">
+                            <li><a href=""><i class="ti-facebook"></i></a></li>
+                            <li><a href=""><i class="ti-youtube"></i></a></li>
+                            <li><a href=""><i class="ti-twitter"></i></a></li>
+                            <li><a href=""><i class="ti-instagram"></i></a></li>
+                            <li><a href=""><i class="ti-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>Copyright &copy; 2021 - Trần Tiến, Inc. All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        var tongTien = 0;
+        let cartPromise = new Promise(() => {})
+        if (cart && cart.length > 0) {
+            cartPromise
+            .then(document.querySelector("#cart-show").innerHTML = cart.map(data => {
+                tongTien += parseInt(data.price * data.quantity)
+                return `<tr>
+                    <td>
+                        <div class="hienthi_item">
+                            <img width="60px" style="border-radius: 3px" src="${data.image}" alt="">
+                            <div class="hienthi_content">
+                                <p><a href="./product-detail.html?id=${data.id}">${data.name}</a></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(data.price)}</td>
+                    <td>${data.quantity} </td>
+                    <td>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(parseInt(data.price * data.quantity))}</td>
+                    <td><button class="delProduct btn btn-danger" value="${data.id}">Xóa</button></td>
+                </tr>`
+            }).join(''))
+            .then(document.querySelector('#cart-tongtien').innerHTML = 'Tổng thanh toán: '+new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tongTien))
+            .then(remoteCartItem())
+        }else{
+            document.querySelector(".cart_all").innerHTML = 
+                    `<img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png" width="100px" alt="">
+                    <span>Giỏ hàng của bạn còn trống</span>
+                    <a href="./" class="btn btn-info">Mua ngay</a>`
+        }
+
+        function reomoveStorage() {
+            localStorage.removeItem('cart');
+            location.reload();
+        }
+        function remoteCartItem() {
+        var bntRemotes = document.querySelectorAll('.delProduct');
+        bntRemotes.forEach((element) => {
+            element.addEventListener('click', () => {
+                console.log(element.value)
+                var dataCart = JSON.parse(localStorage.getItem("cart"));
+                var dataCartNew = dataCart.filter((product) => product.id != element.value);
+                localStorage.setItem("cart", JSON.stringify(dataCartNew));
+                location.reload();
+            })
+        })
+    }
+    </script>
+
+    <script>
+        var iconsearch = $('.iconsearch.ti-search');
+        var formsearch = $('.form-search');
+        iconsearch.click(function () {
+            iconsearch.toggleClass('ti-search');
+            iconsearch.toggleClass('ti-close');
+            formsearch.toggleClass('active')
+        });
+    </script>
+
+    <script src="public/bootrap/js/bootstrap.min.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>

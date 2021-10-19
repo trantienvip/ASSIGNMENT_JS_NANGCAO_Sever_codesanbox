@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="public/css/app.css">
+    <link rel="stylesheet" href="public/bootrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/fonts/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" href="public/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="public/owlcarousel/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="public/owlcarousel/owl.carousel.min.js"></script>
+    <link rel="shortcut icon" href="public/img/favico.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/product-detail.css">
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark blackss">
+                <div class="container menu-mobile">
+                    <a class="navbar-brand" href="/"><img width="130px"
+                            src="http://static.ybox.vn/2020/2/0/1582473564897-Poly.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto col-md-6">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Tin tức 24h <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tin tức coin
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">ETH</a>
+                                    <a class="dropdown-item" href="#">BTC</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">SOL</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nổi bật</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link countCartBig" href="./cart.html"><i class="ti-shopping-cart"></i> <span class="countCart"></span></a>
+                            </li>
+                        </ul>
+                        <i class="iconsearch ti-search"></i>
+                        <form action="search.html" class="form-search" method="get">
+                            <input name="q" id="q" type="text" placeholder="Nhập từ khóa tìm kiếm">
+                            <p style="max-width: 285px;" id="hienthi-no"></p>
+                            <div class="hienthi"></div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                      <li class="breadcrumb-item"><a href="#">Chi tiết sản phẩm</a></li>
+                      <li class="breadcrumb-item active" id="title_product" aria-current="page">Data</li>
+                    </ol>
+                  </nav>
+                
+                <div class="row one_product">
+                    
+                </div>
+
+            </main>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row footertop">
+                    <div class="logo col-lg-3 col-md-12">
+                        <img width="200px" src="http://static.ybox.vn/2020/2/0/1582473564897-Poly.png" alt="">
+                    </div>
+                    <div class="info col-lg-5 col-md-12">
+                        <p>
+                            <hr style="background: red"> Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu
+                            Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam.
+                        </p>
+                    </div>
+                    <div class="social col-lg-4 col-md-12">
+                        <h4 class="linkf">Liên kết với chúng tôi</h4>
+                        <ul class="list-social">
+                            <li><a href=""><i class="ti-facebook"></i></a></li>
+                            <li><a href=""><i class="ti-youtube"></i></a></li>
+                            <li><a href=""><i class="ti-twitter"></i></a></li>
+                            <li><a href=""><i class="ti-instagram"></i></a></li>
+                            <li><a href=""><i class="ti-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>Copyright &copy; 2021 - Trần Tiến, Inc. All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        var url = window.location.search;
+        const urlParams = new URLSearchParams(url);
+        const id = urlParams.get('id');
+        console.log(id);
+        const title_product = document.querySelector('#title_product');
+        const one_product = document.querySelector('.one_product');
+
+        axios.get('https://b1x0b.sse.codesandbox.io/products/' + id)
+            .then(response => title_product.innerHTML = response.data.name)
+
+        axios.get('https://b1x0b.sse.codesandbox.io/products/' + id)
+            .then(response => one_product.innerHTML = `
+            <div class="img_big_product col-md-5">
+                        <img width="100%" src="${response.data.image}" alt="">
+                    </div>
+                    <div class="col-md-7 content_products">
+                        <h4 class="title_product">${response.data.name}</h4>
+                        <span class="price-old">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(response.data.priceold)}</span>
+                        <span class="price">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(response.data.price)} <span id="giamgia_pt">-${parseInt(response.data.priceold-response.data.price)/(parseInt(response.data.priceold))*100}%</span> </span>
+                        <p class="detail_product">${response.data.detail}</p>
+                            <p>Số lượng: <input id="sl_" value="1" type="number"> </p>
+                            <button type="button" class="btn btn-solid-primary btn_muangay" onclick="addToCart(${response.data.id})" aria-disabled="false">Mua ngay</button>
+                    </div>
+            `)
+        //add to cart
+        const getCartItems = () => {
+            const cartItems = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
+            return cartItems;
+        };
+        const setCartItems = (cart) => {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        };
+        
+        countCart();
+        function addToCart(id) {
+            console.log(id); // 1
+            axios.get("https://b1x0b.sse.codesandbox.io/products/" + id)
+            .then((response) => {
+            const newProduct = {
+                ...response.data,
+                quantity: parseInt(document.querySelector('#sl_').value)
+            };
+            // Lấy danh sách sản phẩm từ localStorage
+            let cartItems = getCartItems();
+            console.log(cartItems);
+            // // kiểm tra sản phẩm trong localStorage, nếu ID trùng nhau thì trả về 1 object
+            const existProduct = cartItems.find(
+                (product) => product.id === newProduct.id
+            );
+            console.log("existProduct", existProduct);
+            if (existProduct) {
+                // neu ton tai san pham trong localStorage thi quantity +1
+                existProduct.quantity = existProduct.quantity + parseInt(document.querySelector('#sl_').value);
+            } else {
+                // Nếu không tồn tại sản phẩm nào trùng ID thì thêm sản phẩm click vào giỏ hàng
+                cartItems = [...cartItems, newProduct];
+            }
+            console.log("cartItems", cartItems);
+            setCartItems(cartItems);
+            alert(newProduct.name + " Đã được thêm vào giỏ hàng")
+            location.reload();
+            // // Chay thong bao thanh cong
+            });
+        }
+        function countCart() {
+            var countCart = document.querySelector('.countCart');
+            if (JSON.parse(localStorage.getItem("cart"))) {
+                countCart.innerHTML = JSON.parse(localStorage.getItem("cart")).length;
+                countCart.classList.add('active')
+            }
+        }
+    </script>
+
+    <script>
+        var iconsearch = $('.iconsearch.ti-search');
+        var formsearch = $('.form-search');
+        iconsearch.click(function () {
+            iconsearch.toggleClass('ti-search');
+            iconsearch.toggleClass('ti-close');
+            formsearch.toggleClass('active')
+        });
+    </script>
+
+    <script src="public/bootrap/js/bootstrap.min.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>

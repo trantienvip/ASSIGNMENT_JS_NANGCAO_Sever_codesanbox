@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign in & Sign up Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="" class="sign-in-form" id="signin">
+                    <h2 class="title">Đăng nhập</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="email" placeholder="Email" id="email_dn" autofocus required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="pass_dn" required>
+                    </div>
+                    <input type="submit" value="Đăng nhập" class="btn solid">
+
+                    <p class="social-text">Hoặc đăng nhập bằng các nền tảng mạng xã hội</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+                
+                <form action="#" class="sign-up-form" id="signup">
+                    <h2 class="title">Đăng ký</h2>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="pass" placeholder="Password" required>
+                    </div>
+                    <input type="submit" value="Đăng ký" class="btn solid">
+
+                    <p class="social-text">Hoặc đăng ký bằng các nền tảng mạng xã hội</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Chưa có tài khoản ?</h3>
+                    <p>Bạn chưa có tài khoản vui lòng đăng ký!</p>
+                    <button class="btn transparent" id="sign-up-btn">Đăng ký</button>
+                </div>
+
+                <img src="img/Login.svg" class="image" alt="">
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Đã có tài khoản ?</h3>
+                    <p>Bạn đã có tài khoản đăng nhập ngay!</p>
+                    <button class="btn transparent" id="sign-in-btn">Đăng nhập</button>
+                </div>
+
+                <img src="img/Signup.svg" class="image" alt="">
+            </div>
+        </div>
+    </div>
+    <video autoplay loop muted>
+        <source type="video/mp4" src="../img/background-login.mp4">
+        <!-- <source type="video/webm" src="https://tinyurl.com/y6q5jxr6"> -->
+    </video>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
